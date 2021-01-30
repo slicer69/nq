@@ -44,6 +44,8 @@
 #include <time.h>
 #include <unistd.h>
 
+#define FILENAME_BUFFERSIZE 64
+
 #ifdef NEED_DPRINTF
 #include <stdarg.h>
 static int
@@ -110,7 +112,7 @@ main(int argc, char *argv[])
 	int dirfd = 0, lockfd = 0;
 	int opt = 0, cflag = 0, qflag = 0, tflag = 0, wflag = 0;
 	int pipefd[2];
-	char lockfile[64];
+	char lockfile[FILENAME_BUFFERSIZE];
 	pid_t child;
 	struct timeval started;
 	struct dirent *ent;
