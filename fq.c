@@ -38,6 +38,11 @@ char ibuf[8192];
 #include <sys/event.h>
 #endif
 
+/* Not all systems define this for filename sizes. */
+#ifndef PATH_MAX
+#define PATH_MAX 4096
+#endif
+
 char buf[8192];
 
 static int
